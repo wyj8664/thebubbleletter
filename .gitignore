@@ -1,0 +1,13 @@
+.DS_Store
+.env
+.env.*
+node_modules/
+
+# Local design and research artifacts, not part of the deployed static site.
+design/
+research/
+garden-gpt-image-2/
+
+# Kept locally for recovery, but not used by the current generator UI.
+assets/fonts/Modak-Regular.ttf
+assets/fonts/OFL-modak.txt

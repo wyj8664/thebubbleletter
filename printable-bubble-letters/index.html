@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Printable Bubble Letters | Free Bubble Letter Alphabet</title>
+    <meta
+      name="description"
+      content="Print free bubble letters for classroom activities, coloring pages, posters, crafts, and alphabet worksheets. Includes printable A-Z bubble letter resources."
+    >
+    <link rel="canonical" href="https://www.thebubbleletter.com/printable-bubble-letters/">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Printable Bubble Letters",
+        "url": "https://www.thebubbleletter.com/printable-bubble-letters/",
+        "description": "Print free bubble letters for classroom activities, coloring pages, posters, crafts, and alphabet worksheets.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Bubble Letters",
+          "url": "https://www.thebubbleletter.com/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Bubble Letters home">
+        <span class="brand-mark">B</span>
+        <span>Bubble Letters</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/bubble-letter-generator/">Generator</a>
+        <a href="/printable-bubble-letters/">Printable</a>
+        <a href="/bubble-letters-to-trace/">Trace</a>
+        <a href="/bubble-letter-alphabet/">Alphabet</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="tool-hero printable-hero" aria-labelledby="page-title">
+        <p class="eyebrow">Free printable packs</p>
+        <h1 id="page-title">Printable Bubble Letters</h1>
+        <p>
+          Print colorful bubble letter alphabets, one-letter sheets, numbers, banner
+          words, and party-ready lettering for classrooms, posters, crafts, and signs.
+        </p>
+        <div class="hero-actions">
+          <button class="button primary" type="button" onclick="document.querySelector('#print-alphabet-sheet')?.click()">Print Alphabet Sheet</button>
+          <a class="button secondary" href="/bubble-letter-generator/">Make Custom Text</a>
+        </div>
+      </section>
+
+      <section class="printable-workspace alphabet-printable-workspace" aria-labelledby="letters-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">One-page printable</p>
+          <h2 id="letters-title">Full Bubble Letter Alphabet Sheet</h2>
+          <p>
+            Choose a font and letter case to make a complete alphabet sheet for
+            classroom signs, party banners, posters, craft projects, and display boards.
+          </p>
+        </div>
+
+        <div class="alphabet-sheet-layout" aria-label="Printable alphabet sheet maker">
+          <div class="alphabet-sheet-panel" id="alphabet-print-area">
+            <canvas
+              id="alphabet-sheet-canvas"
+              class="alphabet-sheet-canvas"
+              width="1000"
+              height="1400"
+              role="img"
+              aria-label="Printable A to Z bubble letter alphabet sheet"
+            ></canvas>
+          </div>
+
+          <aside class="alphabet-sheet-controls" aria-label="Alphabet sheet controls">
+            <fieldset class="style-switcher alphabet-case-switcher" aria-label="Letter case">
+              <legend>Letter case</legend>
+              <label>
+                <input type="radio" name="alphabet-case" value="lowercase" checked>
+                Lowercase
+              </label>
+              <label>
+                <input type="radio" name="alphabet-case" value="uppercase">
+                Uppercase
+              </label>
+            </fieldset>
+
+            <fieldset class="font-picker alphabet-sheet-fonts" aria-label="Alphabet sheet font">
+              <legend>Font</legend>
+              <label>
+                <input type="radio" name="alphabet-font" value="Cherry Bomb One" checked>
+                <span style="font-family: 'Cherry Bomb One', sans-serif;">Aa</span>
+                Cherry Bomb
+              </label>
+              <label>
+                <input type="radio" name="alphabet-font" value="Chewy">
+                <span style="font-family: 'Chewy', sans-serif;">Aa</span>
+                Chewy
+              </label>
+              <label>
+                <input type="radio" name="alphabet-font" value="DynaPuff">
+                <span style="font-family: 'DynaPuff', sans-serif;">Aa</span>
+                DynaPuff
+              </label>
+              <label>
+                <input type="radio" name="alphabet-font" value="Luckiest Guy">
+                <span style="font-family: 'Luckiest Guy', sans-serif;">Aa</span>
+                Luckiest
+              </label>
+            </fieldset>
+
+            <div class="color-controls alphabet-sheet-colors" aria-label="Alphabet sheet color controls">
+              <label class="color-style-control">
+                Color style
+                <select id="alphabet-color-style">
+                  <option value="jelly-rainbow" selected>Jelly rainbow</option>
+                  <option value="candy-pop">Candy pop</option>
+                  <option value="fruit-gummy">Fruit gummy</option>
+                  <option value="ocean-gel">Ocean gel</option>
+                  <option value="sunset-party">Sunset party</option>
+                  <option value="low-ink">Low-ink outline</option>
+                </select>
+              </label>
+              <label>
+                Background
+                <input id="alphabet-background-color" type="color" value="#ffffff">
+              </label>
+              <label>
+                Outline color
+                <input id="alphabet-outline-color" type="color" value="#1f1b19">
+              </label>
+            </div>
+
+            <div class="range-controls alphabet-sheet-ranges" aria-label="Alphabet sheet size controls">
+              <label>
+                <span>Letter size <output id="alphabet-size-value">250px</output></span>
+                <input id="alphabet-font-size" type="range" min="120" max="320" value="250">
+              </label>
+              <label>
+                <span>Line weight <output id="alphabet-outline-value">4px</output></span>
+                <input id="alphabet-outline-width" type="range" min="2" max="12" value="4">
+              </label>
+            </div>
+
+            <div class="preview-actions">
+              <button class="button primary" type="button" id="download-alphabet-sheet">Download PNG</button>
+              <button class="button secondary" type="button" id="print-alphabet-sheet">Print Sheet</button>
+            </div>
+          </aside>
+        </div>
+
+      </section>
+
+      <section class="printable-workspace single-letter-workspace" aria-labelledby="single-letters-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Individual letters</p>
+          <h2 id="single-letters-title">Single Printable Bubble Letters</h2>
+          <p>
+            Use one large letter per page for cutouts, classroom labels, posters,
+            banner pieces, alphabet walls, and craft templates.
+          </p>
+        </div>
+        <div class="printable-toolbar" aria-label="Single letter printable options">
+          <button class="button secondary" type="button" id="print-single-letters">Print individual letters</button>
+          <a class="text-link" href="/bubble-letters-to-trace/">Need traceable letters?</a>
+        </div>
+
+        <div class="single-style-controls compact-style-controls" aria-label="Single printable letter style controls">
+          <div class="style-control-topline">
+            <fieldset class="style-switcher single-case-switcher" aria-label="Single letter case">
+              <legend>Letter case</legend>
+              <label>
+                <input type="radio" name="single-letter-case" value="uppercase" checked>
+                Uppercase
+              </label>
+              <label>
+                <input type="radio" name="single-letter-case" value="lowercase">
+                Lowercase
+              </label>
+            </fieldset>
+            <div class="style-control-group palette-control-group">
+              <p class="control-label">Color palette</p>
+              <div class="palette-button-grid compact-palette-grid" aria-label="Single letter color palette">
+                <button type="button" data-single-color-style="jelly-rainbow">
+                  <span class="palette-squares" aria-hidden="true"><span style="background:#ff6fae"></span><span style="background:#ffd25e"></span><span style="background:#5fe0a8"></span><span style="background:#58cafa"></span><span style="background:#bb8dff"></span></span>
+                  <small>Jelly</small>
+                </button>
+                <button type="button" data-single-color-style="candy-pop">
+                  <span class="palette-squares" aria-hidden="true"><span style="background:#ff4fa2"></span><span style="background:#3fd7ff"></span><span style="background:#ffe35a"></span><span style="background:#8ef05c"></span><span style="background:#ff8ed8"></span></span>
+                  <small>Candy</small>
+                </button>
+                <button type="button" data-single-color-style="fruit-gummy">
+                  <span class="palette-squares" aria-hidden="true"><span style="background:#ff7676"></span><span style="background:#ffb347"></span><span style="background:#ffe66d"></span><span style="background:#78e08f"></span><span style="background:#70a1ff"></span></span>
+                  <small>Fruit</small>
+                </button>
+                <button type="button" data-single-color-style="ocean-gel">
+                  <span class="palette-squares" aria-hidden="true"><span style="background:#42e8d4"></span><span style="background:#55d6ff"></span><span style="background:#7aa7ff"></span><span style="background:#b7f7ff"></span><span style="background:#8dffcf"></span></span>
+                  <small>Ocean</small>
+                </button>
+                <button type="button" data-single-color-style="sunset-party">
+                  <span class="palette-squares" aria-hidden="true"><span style="background:#ff7b54"></span><span style="background:#ffb84d"></span><span style="background:#ffe66d"></span><span style="background:#ff6fb3"></span><span style="background:#9d7bff"></span></span>
+                  <small>Sunset</small>
+                </button>
+                <button type="button" data-single-color-style="low-ink">
+                  <span class="palette-squares" aria-hidden="true"><span style="background:#fff"></span><span style="background:#f5f0e9"></span><span style="background:#fff"></span><span style="background:#f5f0e9"></span><span style="background:#fff"></span></span>
+                  <small>Low-ink</small>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="style-control-group">
+            <p class="control-label">Font</p>
+            <div class="compact-font-picker" aria-label="Single letter font">
+              <button type="button" data-single-font="Cherry Bomb One">
+                <span style="font-family: 'Cherry Bomb One', sans-serif;">Aa</span>
+                <small>Cherry Bomb</small>
+              </button>
+              <button type="button" data-single-font="Chewy">
+                <span style="font-family: 'Chewy', sans-serif;">Aa</span>
+                <small>Chewy</small>
+              </button>
+              <button type="button" data-single-font="DynaPuff">
+                <span style="font-family: 'DynaPuff', sans-serif;">Aa</span>
+                <small>DynaPuff</small>
+              </button>
+              <button type="button" data-single-font="Luckiest Guy">
+                <span style="font-family: 'Luckiest Guy', sans-serif;">AA</span>
+                <small>Luckiest</small>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="single-letter-print-stage" id="single-letter-print-area" aria-hidden="true">
+          <canvas
+            id="single-letter-canvas"
+            class="single-letter-canvas"
+            width="1000"
+            height="1400"
+            role="img"
+            aria-label="Selected single printable bubble letter"
+          ></canvas>
+        </div>
+
+        <div class="printable-letter-grid" aria-label="Printable A to Z bubble letters">
+          <article data-single-letter="A" role="button" tabindex="0"><span>A</span><small>Bubble Letter A</small></article>
+          <article data-single-letter="B" role="button" tabindex="0"><span>B</span><small>Bubble Letter B</small></article>
+          <article data-single-letter="C" role="button" tabindex="0"><span>C</span><small>Bubble Letter C</small></article>
+          <article data-single-letter="D" role="button" tabindex="0"><span>D</span><small>Bubble Letter D</small></article>
+          <article data-single-letter="E" role="button" tabindex="0"><span>E</span><small>Bubble Letter E</small></article>
+          <article data-single-letter="F" role="button" tabindex="0"><span>F</span><small>Bubble Letter F</small></article>
+          <article data-single-letter="G" role="button" tabindex="0"><span>G</span><small>Bubble Letter G</small></article>
+          <article data-single-letter="H" role="button" tabindex="0"><span>H</span><small>Bubble Letter H</small></article>
+          <article data-single-letter="I" role="button" tabindex="0"><span>I</span><small>Bubble Letter I</small></article>
+          <article data-single-letter="J" role="button" tabindex="0"><span>J</span><small>Bubble Letter J</small></article>
+          <article data-single-letter="K" role="button" tabindex="0"><span>K</span><small>Bubble Letter K</small></article>
+          <article data-single-letter="L" role="button" tabindex="0"><span>L</span><small>Bubble Letter L</small></article>
+          <article data-single-letter="M" role="button" tabindex="0"><span>M</span><small>Bubble Letter M</small></article>
+          <article data-single-letter="N" role="button" tabindex="0"><span>N</span><small>Bubble Letter N</small></article>
+          <article data-single-letter="O" role="button" tabindex="0"><span>O</span><small>Bubble Letter O</small></article>
+          <article data-single-letter="P" role="button" tabindex="0"><span>P</span><small>Bubble Letter P</small></article>
+          <article data-single-letter="Q" role="button" tabindex="0"><span>Q</span><small>Bubble Letter Q</small></article>
+          <article data-single-letter="R" role="button" tabindex="0"><span>R</span><small>Bubble Letter R</small></article>
+          <article data-single-letter="S" role="button" tabindex="0"><span>S</span><small>Bubble Letter S</small></article>
+          <article data-single-letter="T" role="button" tabindex="0"><span>T</span><small>Bubble Letter T</small></article>
+          <article data-single-letter="U" role="button" tabindex="0"><span>U</span><small>Bubble Letter U</small></article>
+          <article data-single-letter="V" role="button" tabindex="0"><span>V</span><small>Bubble Letter V</small></article>
+          <article data-single-letter="W" role="button" tabindex="0"><span>W</span><small>Bubble Letter W</small></article>
+          <article data-single-letter="X" role="button" tabindex="0"><span>X</span><small>Bubble Letter X</small></article>
+          <article data-single-letter="Y" role="button" tabindex="0"><span>Y</span><small>Bubble Letter Y</small></article>
+          <article data-single-letter="Z" role="button" tabindex="0"><span>Z</span><small>Bubble Letter Z</small></article>
+        </div>
+      </section>
+
+      <section class="printable-workspace printable-numbers-section" aria-labelledby="numbers-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Numbers</p>
+          <h2 id="numbers-title">Printable Bubble Numbers <span class="nowrap">0-9</span></h2>
+          <p>
+            Print large bubble numbers for classroom labels, birthday signs,
+            countdown posters, party tables, math boards, and craft projects.
+          </p>
+        </div>
+        <div class="printable-toolbar" aria-label="Printable number actions">
+          <button class="button secondary" type="button" id="print-bubble-numbers">Print numbers 0-9</button>
+        </div>
+        <div class="single-style-controls compact-style-controls number-style-controls" aria-label="Printable number style controls">
+          <div class="style-control-group">
+            <p class="control-label">Color palette</p>
+            <div class="palette-button-grid compact-palette-grid" aria-label="Number color palette">
+              <button type="button" data-number-color-style="jelly-rainbow"><span class="palette-squares" aria-hidden="true"><span style="background:#ff6fae"></span><span style="background:#ffd25e"></span><span style="background:#5fe0a8"></span><span style="background:#58cafa"></span><span style="background:#bb8dff"></span></span><small>Jelly</small></button>
+              <button type="button" data-number-color-style="candy-pop"><span class="palette-squares" aria-hidden="true"><span style="background:#ff4fa2"></span><span style="background:#3fd7ff"></span><span style="background:#ffe35a"></span><span style="background:#8ef05c"></span><span style="background:#ff8ed8"></span></span><small>Candy</small></button>
+              <button type="button" data-number-color-style="fruit-gummy"><span class="palette-squares" aria-hidden="true"><span style="background:#ff7676"></span><span style="background:#ffb347"></span><span style="background:#ffe66d"></span><span style="background:#78e08f"></span><span style="background:#70a1ff"></span></span><small>Fruit</small></button>
+              <button type="button" data-number-color-style="ocean-gel"><span class="palette-squares" aria-hidden="true"><span style="background:#42e8d4"></span><span style="background:#55d6ff"></span><span style="background:#7aa7ff"></span><span style="background:#b7f7ff"></span><span style="background:#8dffcf"></span></span><small>Ocean</small></button>
+              <button type="button" data-number-color-style="sunset-party"><span class="palette-squares" aria-hidden="true"><span style="background:#ff7b54"></span><span style="background:#ffb84d"></span><span style="background:#ffe66d"></span><span style="background:#ff6fb3"></span><span style="background:#9d7bff"></span></span><small>Sunset</small></button>
+              <button type="button" data-number-color-style="low-ink"><span class="palette-squares" aria-hidden="true"><span style="background:#fff"></span><span style="background:#f5f0e9"></span><span style="background:#fff"></span><span style="background:#f5f0e9"></span><span style="background:#fff"></span></span><small>Low-ink</small></button>
+            </div>
+          </div>
+          <div class="style-control-group">
+            <p class="control-label">Font</p>
+            <div class="compact-font-picker" aria-label="Number font presets">
+              <button type="button" data-number-font="Cherry Bomb One">
+                <span style="font-family: 'Cherry Bomb One', sans-serif;">123</span>
+                <small>Cherry Bomb</small>
+              </button>
+              <button type="button" data-number-font="Chewy">
+                <span style="font-family: 'Chewy', sans-serif;">123</span>
+                <small>Chewy</small>
+              </button>
+              <button type="button" data-number-font="DynaPuff">
+                <span style="font-family: 'DynaPuff', sans-serif;">123</span>
+                <small>DynaPuff</small>
+              </button>
+              <button type="button" data-number-font="Luckiest Guy">
+                <span style="font-family: 'Luckiest Guy', sans-serif;">123</span>
+                <small>Luckiest</small>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="bubble-number-grid" aria-label="Printable bubble numbers">
+          <article data-single-letter="0" role="button" tabindex="0"><span>0</span><small>Bubble Number 0</small></article>
+          <article data-single-letter="1" role="button" tabindex="0"><span>1</span><small>Bubble Number 1</small></article>
+          <article data-single-letter="2" role="button" tabindex="0"><span>2</span><small>Bubble Number 2</small></article>
+          <article data-single-letter="3" role="button" tabindex="0"><span>3</span><small>Bubble Number 3</small></article>
+          <article data-single-letter="4" role="button" tabindex="0"><span>4</span><small>Bubble Number 4</small></article>
+          <article data-single-letter="5" role="button" tabindex="0"><span>5</span><small>Bubble Number 5</small></article>
+          <article data-single-letter="6" role="button" tabindex="0"><span>6</span><small>Bubble Number 6</small></article>
+          <article data-single-letter="7" role="button" tabindex="0"><span>7</span><small>Bubble Number 7</small></article>
+          <article data-single-letter="8" role="button" tabindex="0"><span>8</span><small>Bubble Number 8</small></article>
+          <article data-single-letter="9" role="button" tabindex="0"><span>9</span><small>Bubble Number 9</small></article>
+        </div>
+      </section>
+
+      <section class="printable-workspace phrase-pack-section" aria-labelledby="phrase-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Phrase packs</p>
+          <h2 id="phrase-title">Printable Bubble Word and Banner Ideas</h2>
+          <p>
+            These ready-to-use phrases cover common classroom, birthday, holiday,
+            and poster projects without adding separate thin pages yet.
+          </p>
+        </div>
+        <div class="phrase-pack-grid" aria-label="Printable bubble phrase ideas">
+          <button class="banner-card phrase-card birthday" type="button" data-phrase-card="happy-birthday" aria-label="Open printable Happy Birthday bubble letter banner card">
+            <span class="phrase-card-preview" aria-hidden="true">
+              <span class="phrase-preview-text">Happy<br>Birthday</span>
+            </span>
+            <span class="phrase-card-copy">
+              <span class="banner-title">Happy Birthday</span>
+              <small>Party banner</small>
+            </span>
+          </button>
+          <button class="banner-card phrase-card get-well" type="button" data-phrase-card="get-well-soon" aria-label="Open printable Get Well Soon bubble letter card">
+            <span class="phrase-card-preview" aria-hidden="true">
+              <span class="phrase-preview-text">Get Well<br>Soon</span>
+            </span>
+            <span class="phrase-card-copy">
+              <span class="banner-title">hope you get well soon</span>
+              <small>Get-well card</small>
+            </span>
+          </button>
+          <button class="banner-card phrase-card congrats" type="button" data-phrase-card="congratulations" aria-label="Open printable Congratulations bubble letter sign">
+            <span class="phrase-card-preview" aria-hidden="true">
+              <span class="phrase-preview-text">Congrats</span>
+            </span>
+            <span class="phrase-card-copy">
+              <span class="banner-title">Congratulations</span>
+              <small>Celebration sign</small>
+            </span>
+          </button>
+          <button class="banner-card phrase-card christmas" type="button" data-phrase-card="merry-christmas" aria-label="Open printable Merry Christmas bubble letter banner">
+            <span class="phrase-card-preview" aria-hidden="true">
+              <span class="phrase-preview-text">Merry<br>Christmas</span>
+            </span>
+            <span class="phrase-card-copy">
+              <span class="banner-title">Merry Christmas</span>
+              <small>Seasonal banner</small>
+            </span>
+          </button>
+          <button class="banner-card phrase-card mom" type="button" data-phrase-card="mothers-day" aria-label="Open printable Happy Mother's Day bubble letter card">
+            <span class="phrase-card-preview" aria-hidden="true">
+              <span class="phrase-preview-text">Mother's<br>Day</span>
+            </span>
+            <span class="phrase-card-copy">
+              <span class="banner-title">happy mother's day</span>
+              <small>Mother's Day card</small>
+            </span>
+          </button>
+          <button class="banner-card phrase-card dad" type="button" data-phrase-card="fathers-day" aria-label="Open printable Happy Father's Day bubble letter card">
+            <span class="phrase-card-preview" aria-hidden="true">
+              <span class="phrase-preview-text">Father's<br>Day</span>
+            </span>
+            <span class="phrase-card-copy">
+              <span class="banner-title">happy father's day</span>
+              <small>Father's Day card</small>
+            </span>
+          </button>
+          <button class="banner-card phrase-card halloween" type="button" data-phrase-card="happy-halloween" aria-label="Open printable Happy Halloween bubble letter decoration">
+            <span class="phrase-card-preview" aria-hidden="true">
+              <span class="phrase-preview-text">Happy<br>Halloween</span>
+            </span>
+            <span class="phrase-card-copy">
+              <span class="banner-title">Happy Halloween</span>
+              <small>Party decoration</small>
+            </span>
+          </button>
+          <button class="banner-card phrase-card thanks" type="button" data-phrase-card="thank-you" aria-label="Open printable Thank You bubble letter card">
+            <span class="phrase-card-preview" aria-hidden="true">
+              <span class="phrase-preview-text">Thank<br>You</span>
+            </span>
+            <span class="phrase-card-copy">
+              <span class="banner-title">Thank You</span>
+              <small>Card or poster</small>
+            </span>
+          </button>
+        </div>
+        <div class="phrase-pack-actions">
+          <a class="button primary" href="/bubble-letter-generator/">Create a custom printable phrase</a>
+          <a class="button secondary" href="/bubble-letters-to-trace/">Need outline or traceable letters?</a>
+        </div>
+        <div class="phrase-card-print-stage" aria-hidden="true">
+          <canvas id="phrase-card-print-canvas" width="1400" height="1000" role="img" aria-label="Printable bubble letter phrase card prepared for print"></canvas>
+        </div>
+      </section>
+
+      <section class="generator-notes" aria-labelledby="uses-title">
+        <div>
+          <p class="eyebrow">Common uses</p>
+          <h2 id="uses-title">What people use printable bubble letters for</h2>
+          <p>
+            Printable bubble letters are usually used as visual materials, not as long
+            reading content. People print them, color them, cut them out, or use them
+            as letter templates.
+          </p>
+        </div>
+        <ul class="use-list">
+          <li>Classroom bulletin boards, alphabet walls, labels, and signs</li>
+          <li>Party banners, birthday decorations, welcome signs, and posters</li>
+          <li>Birthday banners, party decorations, posters, and school projects</li>
+          <li>Craft templates for scrapbooks, cards, collages, and DIY signs</li>
+        </ul>
+      </section>
+
+      <section class="explain-section" aria-labelledby="print-title">
+        <div class="explain-copy">
+          <p class="eyebrow">Printing tips</p>
+          <h2 id="print-title">How to print bubble letters</h2>
+          <p>
+            Use the print buttons for one-page sheets, single letters, or printable
+            packs. Choose color printing for display-ready classroom signs and party
+            banners, or switch the alphabet sheet to low-ink outline when you want a
+            black-and-white printable. If you need a custom word or name, use the generator.
+          </p>
+        </div>
+        <div class="related-links" aria-label="Related pages">
+          <a href="/bubble-letter-generator/">Create custom bubble letters</a>
+          <a href="/bubble-letters-to-trace/">Bubble letters to trace</a>
+          <a href="/bubble-letter-alphabet/">Bubble letter alphabet</a>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Printable bubble letters questions</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Are these bubble letters free to print?</summary>
+            <p>Yes. You can print the A-Z bubble letter alphabet for personal, classroom, craft, and learning use.</p>
+          </details>
+          <details>
+            <summary>Can kids use these for coloring pages?</summary>
+            <p>Yes. Use the low-ink outline option or print a single large letter for coloring and craft projects.</p>
+          </details>
+          <details>
+            <summary>Can I print one large bubble letter per page?</summary>
+            <p>Yes. Click any letter in the single-letter section, then print the selected letter.</p>
+          </details>
+          <details>
+            <summary>Do you have printable bubble letter numbers?</summary>
+            <p>Yes. The numbers section includes printable bubble numbers from 0 to 9.</p>
+          </details>
+          <details>
+            <summary>Where can I find black-and-white outline or traceable bubble letters?</summary>
+            <p>Use the low-ink option here for simple outlines, or visit the trace page for worksheet-style letters.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Printable Bubble Letters</p>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/bubble-letter-generator/">Generator</a>
+        <a href="/bubble-letters-to-trace/">Trace</a>
+        <a href="/bubble-letter-alphabet/">Alphabet</a>
+      </nav>
+    </footer>
+
+    <div class="letter-modal" id="single-letter-modal" role="dialog" aria-modal="true" aria-labelledby="single-letter-modal-title" hidden>
+      <button class="letter-modal-backdrop" type="button" data-close-single-modal aria-label="Close selected letter preview"></button>
+      <div class="letter-modal-panel" role="document">
+        <button class="letter-modal-close" type="button" data-close-single-modal>Close</button>
+        <div class="single-letter-modal-preview">
+          <canvas
+            id="single-letter-modal-canvas"
+            class="single-letter-canvas"
+            width="1000"
+            height="1400"
+            role="img"
+            aria-label="Selected bubble letter preview"
+          ></canvas>
+        </div>
+        <div class="single-letter-modal-copy">
+          <p class="eyebrow">Ready to print</p>
+          <h3 id="single-letter-modal-title">Bubble Letter A</h3>
+          <p>Download the selected sheet as PNG or print it as one full-page letter.</p>
+          <div class="preview-actions">
+            <button class="button primary" type="button" id="print-modal-letter">Print selected letter</button>
+            <button class="button secondary" type="button" id="download-modal-letter">Download PNG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="letter-modal phrase-modal" id="phrase-card-modal" role="dialog" aria-modal="true" aria-labelledby="phrase-card-modal-title" hidden>
+      <button class="letter-modal-backdrop" type="button" data-close-phrase-modal aria-label="Close phrase card preview"></button>
+      <div class="letter-modal-panel phrase-modal-panel" role="document">
+        <button class="letter-modal-close" type="button" data-close-phrase-modal>Close</button>
+        <div class="phrase-modal-preview">
+          <canvas id="phrase-card-canvas" width="1400" height="1000" role="img" aria-label="Selected printable bubble letter phrase card"></canvas>
+        </div>
+        <div class="single-letter-modal-copy phrase-modal-copy">
+          <p class="eyebrow">Printable phrase</p>
+          <h3 id="phrase-card-modal-title">Happy Birthday</h3>
+          <div class="phrase-orientation-control" aria-label="Choose card orientation">
+            <button class="orientation-button is-active" type="button" data-phrase-orientation="landscape">Landscape</button>
+            <button class="orientation-button" type="button" data-phrase-orientation="portrait">5x7 portrait</button>
+          </div>
+          <p>
+            Choose a landscape banner or a 5x7 portrait card, then save it as a PNG
+            or print the selected version.
+          </p>
+          <div class="modal-actions">
+            <button class="button primary" type="button" id="print-phrase-card">Print selected design</button>
+            <button class="button secondary" type="button" id="download-phrase-card">Save PNG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

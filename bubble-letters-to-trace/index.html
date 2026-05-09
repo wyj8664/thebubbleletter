@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bubble Letters to Trace | Free Traceable Bubble Letter Worksheets</title>
+    <meta
+      name="description"
+      content="Print free traceable bubble letter worksheets with outline A-Z letters, single letters, numbers, coloring phrases, and custom word tracing ideas."
+    >
+    <link rel="canonical" href="https://www.thebubbleletter.com/bubble-letters-to-trace/">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Bubble Letters to Trace",
+        "url": "https://www.thebubbleletter.com/bubble-letters-to-trace/",
+        "description": "Print free traceable bubble letter worksheets with outline A-Z letters, single letters, numbers, coloring phrases, and custom word tracing ideas.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Bubble Letters",
+          "url": "https://www.thebubbleletter.com/"
+        }
+      }
+    </script>
+  </head>
+  <body data-page="trace">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Bubble Letters home">
+        <span class="brand-mark">B</span>
+        <span>Bubble Letters</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/bubble-letter-generator/">Generator</a>
+        <a href="/printable-bubble-letters/">Printable</a>
+        <a href="/bubble-letters-to-trace/">Trace</a>
+        <a href="/bubble-letter-alphabet/">Alphabet</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="tool-hero trace-hero" aria-labelledby="page-title">
+        <p class="eyebrow">Outline worksheet letters</p>
+        <h1 id="page-title">Bubble Letters to Trace</h1>
+        <p>
+          Print black-and-white bubble letter worksheets for handwriting practice,
+          trace and color activities, homeschool alphabet work, and classroom letter drills.
+        </p>
+        <div class="hero-actions">
+          <button class="button primary" type="button" onclick="document.querySelector('#print-alphabet-sheet')?.click()">Print Trace Worksheets</button>
+          <a class="button secondary" href="/bubble-letter-generator/?style=trace">Make Custom Trace Text</a>
+        </div>
+      </section>
+
+      <section class="trace-workspace printable-workspace alphabet-printable-workspace trace-sheet-section" aria-labelledby="trace-alphabet-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">A-Z worksheet pack</p>
+          <h2 id="trace-alphabet-title">Traceable A-Z Bubble Letter Alphabet</h2>
+          <p>
+            Choose a letter case and bubble font, then print or download a one-page
+            black-and-white alphabet sheet for tracing and coloring.
+          </p>
+        </div>
+
+        <div class="alphabet-sheet-layout trace-sheet-layout" aria-label="Traceable alphabet sheet maker">
+          <div class="alphabet-sheet-panel trace-sheet-preview" id="alphabet-print-area">
+            <canvas
+              id="alphabet-sheet-canvas"
+              class="alphabet-sheet-canvas"
+              width="1000"
+              height="1400"
+              role="img"
+              aria-label="Traceable A to Z bubble letter alphabet sheet"
+            ></canvas>
+          </div>
+
+          <aside class="alphabet-sheet-controls trace-side-panel" aria-label="Traceable alphabet sheet controls">
+            <p class="eyebrow">Practice focus</p>
+            <h3>Trace first, color after</h3>
+            <p>
+              This low-ink sheet is meant for handwriting practice, alphabet recognition,
+              fine motor work, and quiet classroom activities.
+            </p>
+
+            <fieldset class="style-switcher alphabet-case-switcher" aria-label="Letter case">
+              <legend>Letter case</legend>
+              <label>
+                <input type="radio" name="alphabet-case" value="uppercase" checked>
+                Uppercase
+              </label>
+              <label>
+                <input type="radio" name="alphabet-case" value="lowercase">
+                Lowercase
+              </label>
+            </fieldset>
+
+            <fieldset class="font-picker alphabet-sheet-fonts" aria-label="Traceable alphabet sheet font">
+              <legend>Font</legend>
+              <label>
+                <input type="radio" name="alphabet-font" value="Cherry Bomb One" checked>
+                <span style="font-family: 'Cherry Bomb One', sans-serif;">Aa</span>
+                Cherry Bomb
+              </label>
+              <label>
+                <input type="radio" name="alphabet-font" value="Chewy">
+                <span style="font-family: 'Chewy', sans-serif;">Aa</span>
+                Chewy
+              </label>
+              <label>
+                <input type="radio" name="alphabet-font" value="DynaPuff">
+                <span style="font-family: 'DynaPuff', sans-serif;">Aa</span>
+                DynaPuff
+              </label>
+              <label>
+                <input type="radio" name="alphabet-font" value="Luckiest Guy">
+                <span style="font-family: 'Luckiest Guy', sans-serif;">Aa</span>
+                Luckiest
+              </label>
+            </fieldset>
+
+            <input id="alphabet-color-style" type="hidden" value="low-ink">
+            <input id="alphabet-background-color" type="hidden" value="#ffffff">
+            <input id="alphabet-outline-color" type="hidden" value="#1f1b19">
+            <input id="alphabet-outline-width" type="hidden" value="4">
+
+            <div class="range-controls alphabet-sheet-ranges" aria-label="Traceable alphabet sheet size controls">
+              <label>
+                <span>Letter size <output id="alphabet-size-value">230px</output></span>
+                <input id="alphabet-font-size" type="range" min="120" max="280" value="230">
+              </label>
+            </div>
+
+            <div class="trace-action-row">
+              <button class="button primary" type="button" id="download-alphabet-sheet">Download PNG</button>
+              <button class="button secondary" type="button" id="print-alphabet-sheet">Print A-Z Sheet</button>
+              <a class="button secondary" href="/printable-bubble-letters/">Need colorful printables?</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="printable-workspace single-letter-workspace trace-single-section" aria-labelledby="single-trace-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Individual worksheets</p>
+          <h2 id="single-trace-title">Single Traceable Bubble Letters</h2>
+          <p>
+            Click any letter to open a single-sheet outline version. Each sheet is
+            designed for tracing one large bubble letter, then coloring inside the shape.
+          </p>
+        </div>
+
+        <div class="printable-toolbar trace-toolbar" aria-label="Single traceable letter actions">
+          <button class="button primary" type="button" id="print-single-letters">Print individual letters</button>
+          <a class="text-link" href="/printable-bubble-letters/">Need colorful printable letters?</a>
+        </div>
+
+        <div class="single-style-controls compact-style-controls trace-style-controls" aria-label="Traceable single letter controls">
+          <div class="style-control-group">
+            <p class="control-label">Letter case</p>
+            <div class="case-toggle compact-case-toggle" role="radiogroup" aria-label="Single traceable letter case">
+              <label>
+                <input type="radio" name="single-letter-case" value="uppercase" checked>
+                <span>Uppercase</span>
+              </label>
+              <label>
+                <input type="radio" name="single-letter-case" value="lowercase">
+                <span>Lowercase</span>
+              </label>
+            </div>
+          </div>
+          <div class="style-control-group">
+            <p class="control-label">Font</p>
+            <div class="compact-font-picker" aria-label="Traceable single letter font">
+              <button type="button" data-single-font="Cherry Bomb One">
+                <span style="font-family: 'Cherry Bomb One', sans-serif;">Aa</span>
+                <small>Cherry Bomb</small>
+              </button>
+              <button type="button" data-single-font="Chewy">
+                <span style="font-family: 'Chewy', sans-serif;">Aa</span>
+                <small>Chewy</small>
+              </button>
+              <button type="button" data-single-font="DynaPuff">
+                <span style="font-family: 'DynaPuff', sans-serif;">Aa</span>
+                <small>DynaPuff</small>
+              </button>
+              <button type="button" data-single-font="Luckiest Guy">
+                <span style="font-family: 'Luckiest Guy', sans-serif;">AA</span>
+                <small>Luckiest</small>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="single-letter-print-stage" id="single-letter-print-area" aria-hidden="true">
+          <canvas
+            id="single-letter-canvas"
+            class="single-letter-canvas"
+            width="1000"
+            height="1400"
+            role="img"
+            aria-label="Selected traceable bubble letter worksheet"
+          ></canvas>
+        </div>
+
+        <div class="printable-letter-grid trace-click-grid" aria-label="Single traceable A to Z bubble letters">
+          <article data-single-letter="A" role="button" tabindex="0"><span>A</span><small>Trace Letter A</small></article>
+          <article data-single-letter="B" role="button" tabindex="0"><span>B</span><small>Trace Letter B</small></article>
+          <article data-single-letter="C" role="button" tabindex="0"><span>C</span><small>Trace Letter C</small></article>
+          <article data-single-letter="D" role="button" tabindex="0"><span>D</span><small>Trace Letter D</small></article>
+          <article data-single-letter="E" role="button" tabindex="0"><span>E</span><small>Trace Letter E</small></article>
+          <article data-single-letter="F" role="button" tabindex="0"><span>F</span><small>Trace Letter F</small></article>
+          <article data-single-letter="G" role="button" tabindex="0"><span>G</span><small>Trace Letter G</small></article>
+          <article data-single-letter="H" role="button" tabindex="0"><span>H</span><small>Trace Letter H</small></article>
+          <article data-single-letter="I" role="button" tabindex="0"><span>I</span><small>Trace Letter I</small></article>
+          <article data-single-letter="J" role="button" tabindex="0"><span>J</span><small>Trace Letter J</small></article>
+          <article data-single-letter="K" role="button" tabindex="0"><span>K</span><small>Trace Letter K</small></article>
+          <article data-single-letter="L" role="button" tabindex="0"><span>L</span><small>Trace Letter L</small></article>
+          <article data-single-letter="M" role="button" tabindex="0"><span>M</span><small>Trace Letter M</small></article>
+          <article data-single-letter="N" role="button" tabindex="0"><span>N</span><small>Trace Letter N</small></article>
+          <article data-single-letter="O" role="button" tabindex="0"><span>O</span><small>Trace Letter O</small></article>
+          <article data-single-letter="P" role="button" tabindex="0"><span>P</span><small>Trace Letter P</small></article>
+          <article data-single-letter="Q" role="button" tabindex="0"><span>Q</span><small>Trace Letter Q</small></article>
+          <article data-single-letter="R" role="button" tabindex="0"><span>R</span><small>Trace Letter R</small></article>
+          <article data-single-letter="S" role="button" tabindex="0"><span>S</span><small>Trace Letter S</small></article>
+          <article data-single-letter="T" role="button" tabindex="0"><span>T</span><small>Trace Letter T</small></article>
+          <article data-single-letter="U" role="button" tabindex="0"><span>U</span><small>Trace Letter U</small></article>
+          <article data-single-letter="V" role="button" tabindex="0"><span>V</span><small>Trace Letter V</small></article>
+          <article data-single-letter="W" role="button" tabindex="0"><span>W</span><small>Trace Letter W</small></article>
+          <article data-single-letter="X" role="button" tabindex="0"><span>X</span><small>Trace Letter X</small></article>
+          <article data-single-letter="Y" role="button" tabindex="0"><span>Y</span><small>Trace Letter Y</small></article>
+          <article data-single-letter="Z" role="button" tabindex="0"><span>Z</span><small>Trace Letter Z</small></article>
+        </div>
+      </section>
+
+      <section class="printable-workspace printable-numbers-section trace-number-section" aria-labelledby="trace-numbers-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Number worksheets</p>
+          <h2 id="trace-numbers-title">Traceable Bubble Numbers <span class="nowrap">0-9</span></h2>
+          <p>
+            Outline bubble numbers for counting practice, number recognition,
+            math centers, preschool worksheets, and trace-and-color activities.
+          </p>
+        </div>
+        <div class="printable-toolbar trace-toolbar" aria-label="Traceable number actions">
+          <button class="button secondary" type="button" id="print-bubble-numbers">Print numbers 0-9</button>
+        </div>
+        <div class="single-style-controls compact-style-controls trace-style-controls" aria-label="Traceable number font controls">
+          <div class="style-control-group">
+            <p class="control-label">Font</p>
+            <div class="compact-font-picker" aria-label="Traceable number font presets">
+              <button type="button" data-number-font="Cherry Bomb One">
+                <span style="font-family: 'Cherry Bomb One', sans-serif;">123</span>
+                <small>Cherry Bomb</small>
+              </button>
+              <button type="button" data-number-font="Chewy">
+                <span style="font-family: 'Chewy', sans-serif;">123</span>
+                <small>Chewy</small>
+              </button>
+              <button type="button" data-number-font="DynaPuff">
+                <span style="font-family: 'DynaPuff', sans-serif;">123</span>
+                <small>DynaPuff</small>
+              </button>
+              <button type="button" data-number-font="Luckiest Guy">
+                <span style="font-family: 'Luckiest Guy', sans-serif;">123</span>
+                <small>Luckiest</small>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="bubble-number-grid trace-click-grid" aria-label="Traceable bubble numbers">
+          <article data-single-letter="0" role="button" tabindex="0"><span>0</span><small>Trace Number 0</small></article>
+          <article data-single-letter="1" role="button" tabindex="0"><span>1</span><small>Trace Number 1</small></article>
+          <article data-single-letter="2" role="button" tabindex="0"><span>2</span><small>Trace Number 2</small></article>
+          <article data-single-letter="3" role="button" tabindex="0"><span>3</span><small>Trace Number 3</small></article>
+          <article data-single-letter="4" role="button" tabindex="0"><span>4</span><small>Trace Number 4</small></article>
+          <article data-single-letter="5" role="button" tabindex="0"><span>5</span><small>Trace Number 5</small></article>
+          <article data-single-letter="6" role="button" tabindex="0"><span>6</span><small>Trace Number 6</small></article>
+          <article data-single-letter="7" role="button" tabindex="0"><span>7</span><small>Trace Number 7</small></article>
+          <article data-single-letter="8" role="button" tabindex="0"><span>8</span><small>Trace Number 8</small></article>
+          <article data-single-letter="9" role="button" tabindex="0"><span>9</span><small>Trace Number 9</small></article>
+        </div>
+      </section>
+
+      <section class="trace-workspace trace-phrase-section" aria-labelledby="trace-phrase-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Words and coloring phrases</p>
+          <h2 id="trace-phrase-title">Traceable Bubble Words and Coloring Phrases</h2>
+          <p>
+            Common classroom and holiday phrases in black-and-white worksheet style:
+            trace the phrase, then color the letters and small line-art details.
+          </p>
+        </div>
+        <div class="trace-phrase-grid" aria-label="Traceable bubble word worksheet ideas">
+          <button class="trace-phrase-card birthday" type="button" data-phrase-card="happy-birthday" aria-label="Open Happy Birthday traceable bubble letter worksheet">
+            <span class="trace-phrase-preview" aria-hidden="true">
+              <span class="trace-doodle top-left">&#9734;</span>
+              <span class="trace-doodle top-right">&#9651;</span>
+              <span class="trace-phrase-word">Happy<br>Birthday</span>
+              <span class="trace-doodle bottom-left">&#9633;</span>
+              <span class="trace-doodle bottom-right">&#9675;</span>
+            </span>
+            <span class="trace-phrase-title">Happy Birthday</span>
+            <span class="trace-phrase-description">Traceable birthday sign or coloring worksheet.</span>
+          </button>
+          <button class="trace-phrase-card christmas" type="button" data-phrase-card="merry-christmas" aria-label="Open Merry Christmas traceable bubble letter worksheet">
+            <span class="trace-phrase-preview" aria-hidden="true">
+              <span class="trace-doodle top-left">&#10038;</span>
+              <span class="trace-doodle top-right">&#9671;</span>
+              <span class="trace-phrase-word">Merry<br>Christmas</span>
+              <span class="trace-doodle bottom-left">&#9651;</span>
+              <span class="trace-doodle bottom-right">&#9734;</span>
+            </span>
+            <span class="trace-phrase-title">Merry Christmas</span>
+            <span class="trace-phrase-description">Holiday outline phrase for tracing and coloring.</span>
+          </button>
+          <button class="trace-phrase-card thanks" type="button" data-phrase-card="thank-you" aria-label="Open Thank You traceable bubble letter worksheet">
+            <span class="trace-phrase-preview" aria-hidden="true">
+              <span class="trace-doodle top-left">&#9825;</span>
+              <span class="trace-doodle top-right">&#10022;</span>
+              <span class="trace-phrase-word">Thank<br>You</span>
+              <span class="trace-doodle bottom-left">&#10047;</span>
+              <span class="trace-doodle bottom-right">&#9825;</span>
+            </span>
+            <span class="trace-phrase-title">Thank You</span>
+            <span class="trace-phrase-description">Low-ink thank-you note or classroom card starter.</span>
+          </button>
+          <button class="trace-phrase-card mothers" type="button" data-phrase-card="mothers-day" aria-label="Open Happy Mother's Day traceable bubble letter worksheet">
+            <span class="trace-phrase-preview" aria-hidden="true">
+              <span class="trace-doodle top-left">&#10047;</span>
+              <span class="trace-doodle top-right">&#9825;</span>
+              <span class="trace-phrase-word">Happy<br>Mother's<br>Day</span>
+              <span class="trace-doodle bottom-left">&#9825;</span>
+              <span class="trace-doodle bottom-right">&#10047;</span>
+            </span>
+            <span class="trace-phrase-title">Happy Mother's Day</span>
+            <span class="trace-phrase-description">Trace and color worksheet for handmade cards.</span>
+          </button>
+          <button class="trace-phrase-card fathers" type="button" data-phrase-card="fathers-day" aria-label="Open Happy Father's Day traceable bubble letter worksheet">
+            <span class="trace-phrase-preview" aria-hidden="true">
+              <span class="trace-doodle top-left">&#9733;</span>
+              <span class="trace-doodle top-right">~</span>
+              <span class="trace-phrase-word">Happy<br>Father's<br>Day</span>
+              <span class="trace-doodle bottom-left">&#9649;</span>
+              <span class="trace-doodle bottom-right">&#9733;</span>
+            </span>
+            <span class="trace-phrase-title">Happy Father's Day</span>
+            <span class="trace-phrase-description">Outline phrase sheet for handwriting practice.</span>
+          </button>
+          <button class="trace-phrase-card welcome" type="button" data-phrase-card="welcome" aria-label="Open Welcome traceable bubble letter worksheet">
+            <span class="trace-phrase-preview" aria-hidden="true">
+              <span class="trace-doodle top-left">&#9671;</span>
+              <span class="trace-doodle top-right">&#9675;</span>
+              <span class="trace-phrase-word">Welcome</span>
+              <span class="trace-doodle bottom-left">&#10022;</span>
+              <span class="trace-doodle bottom-right">&#9671;</span>
+            </span>
+            <span class="trace-phrase-title">Welcome</span>
+            <span class="trace-phrase-description">Classroom door worksheet or traceable poster word.</span>
+          </button>
+        </div>
+        <div class="phrase-card-print-stage" aria-hidden="true">
+          <canvas id="phrase-card-print-canvas" width="1400" height="1000" role="img" aria-label="Traceable bubble letter phrase worksheet prepared for print"></canvas>
+        </div>
+      </section>
+
+      <section class="trace-workspace trace-custom-section" aria-labelledby="custom-trace-title">
+        <div class="trace-custom-cta">
+          <div>
+            <p class="eyebrow">Custom tracing</p>
+            <h2 id="custom-trace-title">Custom Name or Custom Word Tracing</h2>
+            <p>
+              For names, spelling words, classroom labels, and short worksheet titles,
+              use the generator to create a custom outline bubble word and print it as a practice sheet.
+            </p>
+          </div>
+          <a class="button primary" href="/bubble-letter-generator/?style=trace">Open Custom Generator</a>
+        </div>
+      </section>
+
+      <section class="generator-notes trace-use-section" aria-labelledby="trace-use-title">
+        <div>
+          <p class="eyebrow">Worksheet uses</p>
+          <h2 id="trace-use-title">How to use traceable bubble letters</h2>
+          <p>
+            These outline letters are for practice, not decoration-first display.
+            Print them for handwriting warmups, alphabet centers, homeschool pages,
+            trace-and-color activities, and simple classroom worksheets.
+          </p>
+        </div>
+        <ul class="use-list">
+          <li>Handwriting practice and alphabet recognition</li>
+          <li>Trace and color worksheets for preschool or elementary students</li>
+          <li>Homeschool letter-of-the-week activities</li>
+          <li>Classroom warmups, spelling words, and quiet table work</li>
+        </ul>
+      </section>
+
+      <section class="explain-section" aria-labelledby="related-title">
+        <div class="explain-copy">
+          <p class="eyebrow">Related resources</p>
+          <h2 id="related-title">Traceable or colorful?</h2>
+          <p>
+            Use this page for black-and-white tracing worksheets. Use Printable Bubble
+            Letters when you need colorful letters for banners, posters, displays,
+            crafts, decorations, or seasonal phrases.
+          </p>
+        </div>
+        <div class="related-links" aria-label="Related pages">
+          <a href="/printable-bubble-letters/">Printable Bubble Letters</a>
+          <a href="/bubble-letter-generator/">Bubble Letter Generator</a>
+          <a href="/bubble-letter-alphabet/">Bubble Letter Alphabet</a>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Bubble letters to trace questions</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>What are traceable bubble letters?</summary>
+            <p>They are large rounded outline letters that kids can trace over for handwriting practice, then color inside.</p>
+          </details>
+          <details>
+            <summary>Are these different from printable bubble letters?</summary>
+            <p>Yes. Printable bubble letters are colorful display materials, while this page focuses on black-and-white tracing worksheets.</p>
+          </details>
+          <details>
+            <summary>Can I print one letter at a time?</summary>
+            <p>Yes. Click any letter or number to open a single-sheet version, then print or save it as a PNG.</p>
+          </details>
+          <details>
+            <summary>Can these be used for coloring pages?</summary>
+            <p>Yes. The low-ink outline style works well for trace first, then color activities.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bubble Letters to Trace</p>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/bubble-letter-generator/">Generator</a>
+        <a href="/printable-bubble-letters/">Printable</a>
+        <a href="/bubble-letter-alphabet/">Alphabet</a>
+      </nav>
+    </footer>
+
+    <div class="letter-modal" id="single-letter-modal" role="dialog" aria-modal="true" aria-labelledby="single-letter-modal-title" hidden>
+      <div class="letter-modal-panel">
+        <button class="letter-modal-close" type="button" data-close-single-modal>Close</button>
+        <div class="single-letter-modal-preview">
+          <canvas
+            id="single-letter-modal-canvas"
+            class="single-letter-canvas"
+            width="1000"
+            height="1400"
+            role="img"
+            aria-label="Traceable single bubble letter preview"
+          ></canvas>
+        </div>
+        <div class="single-letter-modal-copy">
+          <p class="eyebrow">Trace worksheet</p>
+          <h3 id="single-letter-modal-title">Trace Letter A</h3>
+          <p>
+            Print one large outline bubble letter or number for handwriting practice,
+            tracing, coloring, and classroom worksheets.
+          </p>
+          <div class="modal-actions">
+            <button class="button primary" type="button" id="print-modal-letter">Print selected sheet</button>
+            <button class="button secondary" type="button" id="download-modal-letter">Save PNG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="letter-modal phrase-modal" id="phrase-card-modal" role="dialog" aria-modal="true" aria-labelledby="phrase-card-modal-title" hidden>
+      <button class="letter-modal-backdrop" type="button" data-close-phrase-modal aria-label="Close traceable phrase preview"></button>
+      <div class="letter-modal-panel phrase-modal-panel" role="document">
+        <button class="letter-modal-close" type="button" data-close-phrase-modal>Close</button>
+        <div class="phrase-modal-preview">
+          <canvas id="phrase-card-canvas" width="1400" height="1000" role="img" aria-label="Selected traceable bubble letter phrase worksheet"></canvas>
+        </div>
+        <div class="single-letter-modal-copy phrase-modal-copy">
+          <p class="eyebrow">Trace phrase</p>
+          <h3 id="phrase-card-modal-title">Happy Birthday</h3>
+          <div class="phrase-orientation-control" aria-label="Choose worksheet orientation">
+            <button class="orientation-button is-active" type="button" data-phrase-orientation="landscape">Landscape</button>
+            <button class="orientation-button" type="button" data-phrase-orientation="portrait">Portrait</button>
+          </div>
+          <p>Open a black-and-white traceable phrase worksheet, then print it or save it as a PNG.</p>
+          <div class="modal-actions">
+            <button class="button primary" type="button" id="print-phrase-card">Print selected sheet</button>
+            <button class="button secondary" type="button" id="download-phrase-card">Save PNG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

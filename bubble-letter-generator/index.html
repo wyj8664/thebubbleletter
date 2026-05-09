@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bubble Letter Generator | Create Free Bubble Letters Online</title>
+    <meta
+      name="description"
+      content="Use this free bubble letter generator to create large outline bubble text for posters, worksheets, coloring pages, classroom signs, and crafts."
+    >
+    <link rel="canonical" href="https://www.thebubbleletter.com/bubble-letter-generator/">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Bubble Letter Generator",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "url": "https://www.thebubbleletter.com/bubble-letter-generator/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body data-page="generator">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Bubble Letters home">
+        <span class="brand-mark">B</span>
+        <span>Bubble Letters</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/bubble-letter-generator/">Generator</a>
+        <a href="/printable-bubble-letters/">Printable</a>
+        <a href="/bubble-letters-to-trace/">Trace</a>
+        <a href="/bubble-letter-alphabet/">Alphabet</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="tool-hero" aria-labelledby="page-title">
+        <p class="eyebrow">Free online tool</p>
+        <h1 id="page-title">Bubble Letter Generator</h1>
+        <p>
+          Create custom bubble letters for posters, coloring pages, classroom signs,
+          worksheets, crafts, banners, and printable lettering.
+        </p>
+      </section>
+
+      <section class="generator-workspace" aria-label="Bubble letter generator tool">
+        <div class="canvas-stage">
+          <div class="preview-sheet full-preview" id="print-area">
+            <div
+              id="bubble-svg-preview"
+              class="bubble-svg-preview generator-svg-preview"
+              role="img"
+              aria-label="Bubble letter SVG preview"
+            ></div>
+            <canvas
+              id="bubble-canvas"
+              class="bubble-canvas generator-canvas"
+              width="1200"
+              height="620"
+              role="img"
+              aria-label="Bubble letter preview"
+              hidden
+            ></canvas>
+          </div>
+          <p class="glyph-support-note" id="glyph-support-note" aria-live="polite"></p>
+          <div class="preview-actions">
+            <button class="button primary" type="button" id="download-png">Download PNG</button>
+            <button class="button secondary" type="button" id="print-preview">Print</button>
+          </div>
+        </div>
+
+        <aside class="control-panel" aria-label="Generator controls">
+          <div class="tool-row">
+            <label for="bubble-text">Your text</label>
+            <textarea id="bubble-text" data-max-length="80" rows="4" autocomplete="off">Bubble
+Letters
+123</textarea>
+          </div>
+
+          <fieldset class="style-switcher" aria-label="Bubble letter style">
+            <legend>Style</legend>
+            <label>
+              <input type="radio" name="bubble-style" value="outline" checked>
+              Outline
+            </label>
+            <label>
+              <input type="radio" name="bubble-style" value="coloring">
+              Coloring
+            </label>
+            <label>
+              <input type="radio" name="bubble-style" value="trace">
+              Trace
+            </label>
+          </fieldset>
+
+          <fieldset class="font-picker generator-font-picker" aria-label="Letter font">
+            <legend>Letter font</legend>
+            <label>
+              <input type="radio" name="bubble-font" value="Cherry Bomb One" checked>
+              <span style="font-family: 'Cherry Bomb One', sans-serif;">Aa</span>
+              Cherry Bomb
+            </label>
+            <label>
+              <input type="radio" name="bubble-font" value="Chewy">
+              <span style="font-family: 'Chewy', sans-serif;">Aa</span>
+              Chewy
+            </label>
+            <label>
+              <input type="radio" name="bubble-font" value="DynaPuff">
+              <span style="font-family: 'DynaPuff', sans-serif;">Aa</span>
+              DynaPuff
+            </label>
+            <label>
+              <input type="radio" name="bubble-font" value="Luckiest Guy">
+              <span style="font-family: 'Luckiest Guy', sans-serif;">Aa</span>
+              Luckiest
+            </label>
+          </fieldset>
+
+          <div class="color-controls generator-colors" aria-label="Color controls">
+            <label class="generator-color-style-control">
+              Color style
+              <select id="color-style">
+                <option value="custom" selected>Custom</option>
+                <option value="pink-jelly">Pink Jelly</option>
+                <option value="orange-jelly">Orange Jelly</option>
+                <option value="yellow-jelly">Yellow Jelly</option>
+                <option value="blue-jelly">Blue Jelly</option>
+                <option value="purple-jelly">Purple Jelly</option>
+                <option value="rainbow">Rainbow</option>
+                <option value="pastel">Pastel</option>
+                <option value="black-white-outline">Black &amp; White Outline</option>
+                <option value="traceable">Traceable</option>
+              </select>
+            </label>
+            <label>
+              Color picker
+              <input id="font-color" type="color" value="#f699ed">
+            </label>
+            <label>
+              Background
+              <input id="background-color" type="color" value="#34a4a9">
+            </label>
+            <label>
+              Outline color
+              <input id="outline-color" type="color" value="#1f1b19">
+            </label>
+            <div class="generator-toggle-row" aria-label="Render options">
+              <label class="toggle-control">
+                <input id="jelly-effect-enabled" type="checkbox" checked>
+                Jelly effect
+              </label>
+              <label class="toggle-control">
+                <input id="outline-enabled" type="checkbox" checked>
+                Use one outline
+              </label>
+              <label class="toggle-control grid-toggle-control">
+                <input id="grid-enabled" type="checkbox" checked>
+                Show grid
+              </label>
+            </div>
+          </div>
+
+          <div class="range-controls" aria-label="Size controls">
+            <label>
+              <span>Glyph size <output id="font-size-value">240px</output></span>
+              <input id="font-size" type="range" min="80" max="360" value="240">
+            </label>
+            <label>
+              <span>Outline size <output id="outline-width-value">16px</output></span>
+              <input id="outline-width" type="range" min="0" max="32" value="16">
+            </label>
+            <label>
+              Canvas size
+              <select id="canvas-size">
+                <option value="1200x620">Wide 1200 x 620</option>
+                <option value="1080x1080">Square 1080 x 1080</option>
+                <option value="1500x2000">Printable 1500 x 2000</option>
+              </select>
+            </label>
+          </div>
+        </aside>
+      </section>
+
+      <section class="generator-notes" aria-labelledby="how-title">
+        <div>
+          <p class="eyebrow">How it works</p>
+          <h2 id="how-title">Make bubble letters in a few clicks</h2>
+          <p>
+            Type your text, choose a bubble style, adjust colors, then download a PNG
+            or print the result. The generator works in your browser and does not need
+            a login or upload.
+          </p>
+        </div>
+        <ul class="use-list">
+          <li>Use outline letters for signs, banners, and posters.</li>
+          <li>Use coloring style for printable bubble letter coloring pages.</li>
+          <li>Use trace style for light worksheet lettering and practice sheets.</li>
+        </ul>
+      </section>
+
+      <section class="explain-section" aria-labelledby="related-tools-title">
+        <div class="explain-copy">
+          <p class="eyebrow">Related tools</p>
+          <h2 id="related-tools-title">More bubble letter pages</h2>
+          <p>
+            Use the generator for custom words and names. If you need ready-made
+            printable letters, tracing worksheets, alphabet pages, or font examples,
+            these related bubble letter pages are the fastest next step.
+          </p>
+        </div>
+        <div class="related-links" aria-label="Related bubble letter tools">
+          <a href="/printable-bubble-letters/">Printable bubble letters</a>
+          <a href="/bubble-letters-to-trace/">Traceable bubble letters</a>
+          <a href="/bubble-letter-alphabet/">Bubble letter alphabet</a>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Bubble letter generator questions</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>What is a bubble letter generator?</summary>
+            <p>It is a browser tool that turns typed text into large rounded bubble letters you can print or download.</p>
+          </details>
+          <details>
+            <summary>Can I download the bubble letters as PNG?</summary>
+            <p>Yes. Use the Download PNG button to save the current canvas as an image.</p>
+          </details>
+          <details>
+            <summary>Can I print the bubble letters?</summary>
+            <p>Yes. Use the Print button after choosing your text, font, colors, and canvas size.</p>
+          </details>
+          <details>
+            <summary>Can I use this for classroom worksheets?</summary>
+            <p>Yes. The outline, coloring, and trace styles are useful for classroom signs, worksheets, crafts, and practice pages.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bubble Letter Generator</p>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/printable-bubble-letters/">Printable</a>
+        <a href="/bubble-letters-to-trace/">Trace</a>
+        <a href="/bubble-letter-alphabet/">Alphabet</a>
+      </nav>
+    </footer>
+
+    <script src="/assets/js/jelly-glyph-data.js"></script>
+    <script src="/assets/js/jelly-glyph-renderer.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

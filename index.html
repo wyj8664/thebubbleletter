@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bubble Letter Generator, Printables & Tracing Worksheets</title>
+    <meta
+      name="description"
+      content="Create bubble letters online and print free bubble letter alphabets, tracing worksheets, coloring pages, classroom signs, crafts, and posters."
+    >
+    <link rel="canonical" href="https://www.thebubbleletter.com/">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Bubble Letters",
+        "url": "https://www.thebubbleletter.com/",
+        "description": "Create bubble letters online and print free bubble letter alphabets, tracing worksheets, coloring pages, and classroom signs."
+      }
+    </script>
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Bubble Letters home">
+        <span class="brand-mark">B</span>
+        <span>Bubble Letters</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/bubble-letter-generator/">Generator</a>
+        <a href="/printable-bubble-letters/">Printable</a>
+        <a href="/bubble-letters-to-trace/">Trace</a>
+        <a href="/bubble-letter-alphabet/">Alphabet</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Free printable letters for classrooms, crafts, and posters</p>
+          <h1 id="page-title">Bubble Letter Generator, Printables & Tracing Worksheets</h1>
+          <p class="hero-text">
+            Type a word, preview large outline bubble letters, then print or explore A-Z
+            bubble letter resources for tracing, coloring, worksheets, and signs.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="/bubble-letter-generator/">Create Bubble Letters</a>
+            <a class="button secondary" href="/printable-bubble-letters/">Print A-Z Letters</a>
+          </div>
+        </div>
+
+        <div class="preview-panel" aria-label="Bubble letter preview tool">
+          <div class="tool-row">
+            <label for="bubble-text">Type your word</label>
+            <input id="bubble-text" type="text" value="Bubble" maxlength="18" autocomplete="off">
+          </div>
+          <fieldset class="style-switcher" aria-label="Bubble letter style">
+            <legend>Style</legend>
+            <label>
+              <input type="radio" name="bubble-style" value="outline" checked>
+              Outline
+            </label>
+            <label>
+              <input type="radio" name="bubble-style" value="coloring">
+              Colorful
+            </label>
+            <label>
+              <input type="radio" name="bubble-style" value="trace">
+              Trace
+            </label>
+          </fieldset>
+          <div class="color-controls home-generator-colors" aria-label="Color controls">
+            <label>
+              Color style
+              <select id="color-style">
+                <option value="custom" selected>Custom</option>
+                <option value="pink-jelly">Pink Jelly</option>
+                <option value="orange-jelly">Orange Jelly</option>
+                <option value="yellow-jelly">Yellow Jelly</option>
+                <option value="blue-jelly">Blue Jelly</option>
+                <option value="purple-jelly">Purple Jelly</option>
+                <option value="rainbow">Rainbow</option>
+                <option value="pastel">Pastel</option>
+                <option value="black-white-outline">Black &amp; White Outline</option>
+                <option value="traceable">Traceable</option>
+              </select>
+            </label>
+            <label>
+              Color picker
+              <input id="font-color" type="color" value="#f699ed">
+            </label>
+            <label>
+              Background
+              <input id="background-color" type="color" value="#34a4a9">
+            </label>
+          </div>
+          <div class="preview-sheet" id="print-area">
+            <div
+              id="bubble-svg-preview"
+              class="bubble-svg-preview"
+              role="img"
+              aria-label="Bubble letter SVG preview"
+            ></div>
+            <canvas
+              id="bubble-canvas"
+              class="bubble-canvas"
+              width="1200"
+              height="620"
+              role="img"
+              aria-label="Bubble letter preview"
+              hidden
+            ></canvas>
+          </div>
+          <p class="glyph-support-note" id="glyph-support-note" aria-live="polite" hidden></p>
+          <div class="preview-actions">
+            <a class="button primary" href="/bubble-letter-generator/">Open Full Generator</a>
+            <button class="button secondary" type="button" id="print-preview">Print Preview</button>
+            <button class="button secondary" type="button" id="download-png">Download PNG</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="resource-section" id="resources" aria-labelledby="resources-title">
+        <div class="section-heading">
+          <p class="eyebrow">Popular resources</p>
+          <h2 id="resources-title">Choose the bubble letter page you need</h2>
+        </div>
+        <div class="resource-grid">
+          <a class="resource-link" href="/bubble-letter-generator/">
+            <span class="resource-label">Generator</span>
+            <strong>Bubble Letter Generator</strong>
+            <span>Create custom bubble text for posters, signs, coloring pages, and crafts.</span>
+          </a>
+          <a class="resource-link" href="/printable-bubble-letters/">
+            <span class="resource-label">Printable</span>
+            <strong>Printable Bubble Letters</strong>
+            <span>Print large A-Z bubble letters for classrooms, banners, and projects.</span>
+          </a>
+          <a class="resource-link" href="/bubble-letters-to-trace/">
+            <span class="resource-label">Trace</span>
+            <strong>Bubble Letters to Trace</strong>
+            <span>Use traceable bubble letters for handwriting practice and worksheets.</span>
+          </a>
+          <a class="resource-link" href="/bubble-letter-alphabet/">
+            <span class="resource-label">Alphabet</span>
+            <strong>Bubble Letter Alphabet</strong>
+            <span>View the full A-Z bubble alphabet for coloring, drawing, and printing.</span>
+          </a>
+        </div>
+      </section>
+
+      <section
+        class="alphabet-strip alphabet-click-through"
+        aria-labelledby="alphabet-title"
+        data-section-href="/bubble-letter-alphabet/"
+        role="link"
+        tabindex="0"
+      >
+        <div class="section-heading compact">
+          <p class="eyebrow">A-Z preview</p>
+          <h2 id="alphabet-title">Bubble letter alphabet</h2>
+          <p>
+            Start with a full alphabet preview, then use the printable and tracing pages
+            when you need classroom-ready sheets.
+          </p>
+        </div>
+        <div class="letter-grid" aria-label="Bubble letter alphabet preview">
+          <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span>
+          <span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span>
+          <span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span>
+          <span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span>
+          <span>Y</span><span>Z</span>
+        </div>
+      </section>
+
+      <section class="trace-callout-section" aria-labelledby="trace-callout-title">
+        <a class="trace-callout-link" href="/bubble-letters-to-trace/">
+          <span class="resource-label">Trace</span>
+          <div>
+            <h2 id="trace-callout-title">Traceable bubble letters</h2>
+            <p>
+              Open trace-friendly bubble letters for handwriting worksheets,
+              name practice, classroom pages, and coloring activities.
+            </p>
+          </div>
+          <span class="trace-callout-action">Open Trace Page</span>
+        </a>
+      </section>
+
+      <section class="uses-section" aria-labelledby="uses-title">
+        <div>
+          <p class="eyebrow">What people make</p>
+          <h2 id="uses-title">Bubble letters are made to print, trace, color, and display</h2>
+        </div>
+        <ul class="use-list">
+          <li>Classroom bulletin boards and alphabet activities</li>
+          <li>Tracing worksheets for kids and homeschool practice</li>
+          <li>Printable coloring pages and craft templates</li>
+          <li>Birthday banners, posters, signs, and scrapbook lettering</li>
+        </ul>
+      </section>
+
+      <section class="explain-section" aria-labelledby="what-title">
+        <div class="explain-copy">
+          <p class="eyebrow">Quick answer</p>
+          <h2 id="what-title">What are bubble letters?</h2>
+          <p>
+            Bubble letters are large, rounded outline letters that look easy to fill,
+            trace, and decorate. Teachers, parents, students, and craft makers use them
+            for printable worksheets, classroom signs, coloring activities, posters, and
+            handmade projects.
+          </p>
+        </div>
+        <div class="related-links" aria-label="Related pages">
+          <a href="/bubble-letters-to-trace/">Traceable Bubble Letters</a>
+          <a href="/printable-bubble-letters/">Free Printable Bubble Letters</a>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Bubble letters questions</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Can I print bubble letters from this site?</summary>
+            <p>Yes. The homepage preview can be printed, and the printable pages will focus on A-Z sheets and letter resources.</p>
+          </details>
+          <details>
+            <summary>What are bubble letters used for?</summary>
+            <p>They are commonly used for classroom signs, tracing worksheets, coloring pages, posters, banners, and craft projects.</p>
+          </details>
+          <details>
+            <summary>Are bubble letters good for kids?</summary>
+            <p>Yes. Large outline letters are easy for kids to trace, color, cut out, and recognize during alphabet practice.</p>
+          </details>
+          <details>
+            <summary>Are bubble letters the same as bubble fonts?</summary>
+            <p>Bubble letters are a drawing or printable style. Bubble fonts are text styles that imitate the same rounded outline look.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bubble Letter Generator, Printables & Tracing Worksheets</p>
+      <nav aria-label="Footer navigation">
+        <a href="/bubble-letter-generator/">Generator</a>
+        <a href="/printable-bubble-letters/">Printable</a>
+        <a href="/bubble-letters-to-trace/">Trace</a>
+        <a href="/bubble-letter-alphabet/">Alphabet</a>
+      </nav>
+    </footer>
+
+    <script src="/assets/js/jelly-glyph-data.js"></script>
+    <script src="/assets/js/jelly-glyph-renderer.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
