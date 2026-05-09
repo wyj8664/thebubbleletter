@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "thebubbleletter",
+  "main": "./worker.js",
+  "compatibility_date": "2026-05-09",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "routes": [
+    {
+      "pattern": "www.thebubbleletter.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "thebubbleletter.com",
+      "custom_domain": true
+    }
+  ]
+}

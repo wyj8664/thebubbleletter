@@ -2,6 +2,7 @@
 .env
 .env.*
 node_modules/
+.wrangler/
 
 # Local design and research artifacts, not part of the deployed static site.
 design/
