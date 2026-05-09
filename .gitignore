@@ -11,3 +11,9 @@ garden-gpt-image-2/
 # Kept locally for recovery, but not used by the current generator UI.
 assets/fonts/Modak-Regular.ttf
 assets/fonts/OFL-modak.txt
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
