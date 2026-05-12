@@ -1,0 +1,19 @@
+{
+  "name": "The Bubble Letter",
+  "short_name": "Bubble Letter",
+  "icons": [
+    {
+      "src": "/assets/images/logo/bubble-logo-a.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#fffaf2",
+  "background_color": "#fffaf2",
+  "display": "standalone"
+}
