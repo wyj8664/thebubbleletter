@@ -73,6 +73,9 @@ const phrasePrintButton = document.querySelector("#print-phrase-card");
 const phraseDownloadButton = document.querySelector("#download-phrase-card");
 const alphabetBrowserCaseInputs = document.querySelectorAll("input[name='alphabet-browser-case']");
 const alphabetBrowserCards = document.querySelectorAll("[data-alphabet-card]");
+const letterTemplateCards = document.querySelectorAll("[data-letter-template]");
+const letterTemplateFontButtons = document.querySelectorAll("[data-letter-template-font]");
+const letterTemplateColorButtons = document.querySelectorAll("[data-letter-template-color]");
 const sectionLinks = document.querySelectorAll("[data-section-href]");
 const isHomePage = document.body?.dataset.page === "home";
 const isGeneratorPage = document.body?.dataset.page === "generator";
@@ -89,6 +92,8 @@ let selectedSingleFont = "Cherry Bomb One";
 let selectedSingleColorStyle = isTracePage ? "low-ink" : "jelly-rainbow";
 let selectedNumberFont = "Cherry Bomb One";
 let selectedNumberColorStyle = isTracePage ? "low-ink" : "jelly-rainbow";
+let selectedLetterTemplateFont = "Cherry Bomb One";
+let selectedLetterTemplateColor = "#ff6fae";
 let selectedPhraseCard = "happy-birthday";
 let selectedPhraseOrientation = "landscape";
 const phraseBackgroundCache = new Map();
@@ -1101,8 +1106,13 @@ function getPrintableSwatch(colorStyle, index) {
   return palette[index % palette.length];
 }
 
+function isHexFillColor(value) {
+  return /^#[0-9a-f]{6}$/i.test(value || "");
+}
+
 function getPrintableFillStyle(contextToUse, colorStyle, backgroundColor, index, metrics) {
   if (colorStyle === "low-ink") return backgroundColor;
+  if (isHexFillColor(colorStyle)) return colorStyle;
   const swatch = getPrintableSwatch(colorStyle, index);
   const gradient = contextToUse.createLinearGradient(
     0,
@@ -1121,7 +1131,57 @@ function getPrintableFillStyle(contextToUse, colorStyle, backgroundColor, index,
 
 function getPrintableFillColor(colorStyle, backgroundColor, index) {
   if (colorStyle === "low-ink") return backgroundColor;
+  if (isHexFillColor(colorStyle)) return colorStyle;
   return getPrintableSwatch(colorStyle, index).base;
+}
+
+function syncLetterTemplateLink(link) {
+  const activeFont = document.querySelector("[data-letter-template-font].is-active")?.dataset.letterTemplateFont;
+  const activeColor = document.querySelector("[data-letter-template-color].is-active")?.dataset.letterTemplateColor;
+  const font = selectedLetterTemplateFont || activeFont;
+  const color = selectedLetterTemplateColor || activeColor;
+
+  if (!link || !font || !color) return;
+
+  const url = new URL(link.getAttribute("href"), window.location.origin);
+  url.searchParams.set("font", font);
+  url.searchParams.set("color", color);
+  url.searchParams.set("templateColorVersion", "20260516-color4");
+  url.searchParams.delete("colorStyle");
+  link.href = url.pathname + url.search + url.hash;
+}
+
+function updateLetterTemplatePreview() {
+  if (!letterTemplateCards.length) return;
+  const allowedTemplateFonts = new Set([...letterTemplateFontButtons].map((button) => button.dataset.letterTemplateFont));
+  if (!allowedTemplateFonts.has(selectedLetterTemplateFont)) selectedLetterTemplateFont = "Cherry Bomb One";
+
+  letterTemplateCards.forEach((card) => {
+    const glyph = card.querySelector("span");
+    const letter = card.dataset.templateLetter || "A";
+    const templateCase = card.dataset.templateCase || "uppercase";
+    const displayValue = templateCase === "lowercase" ? letter.toLowerCase() : letter.toUpperCase();
+
+    if (glyph) {
+      glyph.textContent = displayValue;
+      glyph.style.fontFamily = "\"" + selectedLetterTemplateFont + "\", \"Cherry Bomb One\", \"Arial Rounded MT Bold\", sans-serif";
+      glyph.style.color = selectedLetterTemplateColor;
+    }
+
+    card.querySelectorAll("[data-print-letter], [data-trace-letter]").forEach(syncLetterTemplateLink);
+  });
+
+  letterTemplateFontButtons.forEach((button) => {
+    const isActive = button.dataset.letterTemplateFont === selectedLetterTemplateFont;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+
+  letterTemplateColorButtons.forEach((button) => {
+    const isActive = button.dataset.letterTemplateColor === selectedLetterTemplateColor;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
 }
 
 function updateAlphabetSheetLabels() {
@@ -1184,6 +1244,7 @@ function downloadAlphabetSheet() {
 }
 
 function getSinglePrintableConfig(value = selectedSingleLetter) {
+  const urlColorOverride = normalizeHexColor(getCurrentQueryParams().get("color") || "");
   const isNumber = /^\d$/.test(value);
   const singleFontFamily = selectedSingleCase === "lowercase" && alphabetUppercaseOnlyFonts.has(selectedSingleFont)
     ? "Cherry Bomb One"
@@ -1198,7 +1259,7 @@ function getSinglePrintableConfig(value = selectedSingleLetter) {
     isNumber,
     displayValue,
     fontFamily: isNumber ? selectedNumberFont : singleFontFamily,
-    colorStyle: isNumber ? selectedNumberColorStyle : selectedSingleColorStyle
+    colorStyle: urlColorOverride || (isNumber ? selectedNumberColorStyle : selectedSingleColorStyle)
   };
 }
 
@@ -2014,6 +2075,13 @@ async function printPhraseCard() {
 function openSingleLetterModal() {
   if (!singleLetterModal) return;
 
+  const requestedColor = normalizeHexColor(getCurrentQueryParams().get("color") || "");
+  if (requestedColor) {
+    selectedSingleColorStyle = requestedColor;
+    drawSingleLetterSheet();
+    updateSinglePrintableCards();
+  }
+
   singleLetterModal.hidden = false;
   document.body.classList.add("modal-open");
   singleLetterModal.querySelector(".letter-modal-close")?.focus();
@@ -2276,6 +2344,20 @@ function applySingleLetterQueryParams() {
       : "uppercase";
   }
 
+  const requestedFont = params.get("font");
+  if (requestedFont && fontSources.some((source) => source[0] === requestedFont)) {
+    const fontWorksForCase = isNumber || selectedSingleCase !== "lowercase" || !alphabetUppercaseOnlyFonts.has(requestedFont);
+    if (fontWorksForCase) selectedSingleFont = requestedFont;
+  }
+
+  const requestedColor = normalizeHexColor(params.get("color") || "");
+  const requestedColorStyle = params.get("colorStyle");
+  if (requestedColor) {
+    selectedSingleColorStyle = requestedColor;
+  } else if (requestedColorStyle && (printablePalettes[requestedColorStyle] || requestedColorStyle === "low-ink")) {
+    selectedSingleColorStyle = requestedColorStyle;
+  }
+
   selectSingleLetter(normalizedLetter, false);
 
   if (["1", "true", "yes"].includes((params.get("open") || "").toLowerCase())) {
@@ -2399,6 +2481,31 @@ singleColorButtons.forEach((button) => {
   button.addEventListener("click", () => {
     selectedSingleColorStyle = button.dataset.singleColorStyle || selectedSingleColorStyle;
     selectSingleLetter(selectedSingleLetter, false);
+  });
+});
+
+letterTemplateFontButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    selectedLetterTemplateFont = button.dataset.letterTemplateFont || selectedLetterTemplateFont;
+    updateLetterTemplatePreview();
+  });
+});
+
+letterTemplateColorButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    selectedLetterTemplateColor = button.dataset.letterTemplateColor || selectedLetterTemplateColor;
+    updateLetterTemplatePreview();
+  });
+});
+
+letterTemplateCards.forEach((card) => {
+  card.querySelectorAll("[data-print-letter], [data-trace-letter]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      syncLetterTemplateLink(link);
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+      event.preventDefault();
+      window.location.href = link.href;
+    });
   });
 });
 
@@ -2544,4 +2651,5 @@ loadFonts().finally(() => {
   updateAlphabetBrowser();
   initializePhraseCards();
   updatePhraseCardPreview();
+  updateLetterTemplatePreview();
 });
